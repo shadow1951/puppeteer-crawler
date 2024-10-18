@@ -7,7 +7,7 @@ const crawl = async (url, depth, maxSites, visitedUrls = new Set()) => {
     return [];
 
   visitedUrls.add(url); // Mark the URL as visited
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage();
   const results = [];
 
